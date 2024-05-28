@@ -1,0 +1,19 @@
+<%- include ("partials/header") -%>
+<h1>HOME</h1>
+<p><%= startingcontent %></p>
+
+ <%# homepost is the data passed from the server using ejs  %>
+<% homepost.forEach(function (post) { %>
+
+<%  //console.log(post.itembody); %>
+<% const postdata = post.itembody %>
+<% const commentdata = post.comment %>
+<h1><%=postdata %>  </h1>
+<p> <%= commentdata.slice(0, 100) + "..."; %><a href="/posts/<%=postdata %>">Read more</a> </p>
+
+
+<% }); %>
+
+
+
+<%- include ("partials/footer") -%>
